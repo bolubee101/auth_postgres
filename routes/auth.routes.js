@@ -11,7 +11,7 @@ module.exports = ((app) => {
     next();
   });
 
-  app.post('/api/auth/signup',[verifySignUp.checkDupUsernameOrEmail], controller.signUp);
+  app.post('/api/auth/signup',checkDupUsernameOrEmail, controller.signUp);
 
   app.post('api/auth/signin', controller.signIn)
 })

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const config = require('../config/db.config.js')
+const config = require('../config/db.config')
 
 const sequelize = new Sequelize ( 
   config.DB, 
@@ -10,12 +10,13 @@ const sequelize = new Sequelize (
     dialect: config.dialect
   }
 )
+// require('./user.model')(Sequelize, sequelize);
+// const db = {};
 
-const db = {};
+// db.Sequelize = Sequelize;
+// db.sequelize = sequelize;
 
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
+// db.User = require('./user.model')(sequelize. Sequelize);
 
-db.user = require('../model/user.model.js')(sequelize. Sequelize);
 
-module.exports = db;
+// module.exports = db;
