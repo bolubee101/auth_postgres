@@ -1,4 +1,4 @@
-// to verrify signup actions
+// to verify signup actions
 
 const db = require('../model');
 const User = db.user
@@ -33,8 +33,6 @@ checkDupUsernameOrEmail = (req, res, next) => {
   next();
 }
 
-const verifySignUp = {
-  checkDupUsernameOrEmail: checkDupUsernameOrEmail
-};
+const verifySignUp = checkDupUsernameOrEmail;
 
 module.exports = verifySignUp;

@@ -1,7 +1,7 @@
 
-const { verifySignUp }  = require('../middleware');
+// const verifySignUp = require('../middleware');
 const controller = require('../controllers/auth.controller');
-const { checkDupUsernameOrEmail } = require('../middleware/verifySignUp');
+const  checkDupUsernameOrEmail  = require('../middleware/verifySignUp');
 
 module.exports = ((app) => {
   app.use((req, res, next) => {
@@ -13,4 +13,5 @@ module.exports = ((app) => {
 
   app.post('/api/auth/signup',[verifySignUp.checkDupUsernameOrEmail], controller.signUp);
 
-  app.post('api/auth/signin', controller.signIn)
+  app.post('api/auth/signin', controller.signIn)
+})
