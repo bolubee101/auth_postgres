@@ -15,3 +15,5 @@ sequelize.authenticate().then(() =>{
 }).catch((error) => {
   console.log('Database Connection Failed', error)
 })
+
+// module.exports = sequelize

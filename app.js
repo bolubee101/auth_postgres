@@ -9,7 +9,7 @@ app.use(cors);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded ({extended: true }));
 
-
+require('./model/index')
 require('./routes/auth.routes')(app);
 
 
