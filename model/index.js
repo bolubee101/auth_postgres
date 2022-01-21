@@ -10,13 +10,8 @@ const sequelize = new Sequelize (
     dialect: config.dialect
   }
 )
-// require('./user.model')(Sequelize, sequelize);
-// const db = {};
-
-// db.Sequelize = Sequelize;
-// db.sequelize = sequelize;
-
-// db.User = require('./user.model')(sequelize. Sequelize);
-
-
-// module.exports = db;
+sequelize.authenticate().then(() =>{
+  console.log('Database Connected Successfully')
+}).catch((error) => {
+  console.log('Database Connection Failed', error)
+})

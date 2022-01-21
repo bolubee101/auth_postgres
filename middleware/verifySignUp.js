@@ -1,7 +1,7 @@
 // to verify signup actions
 
-const db = require('../model');
-const User = db.user
+const User  = require('../model/user.model');
+// const User = db.User
 
 checkDupUsernameOrEmail = (req, res, next) => {
   // username
@@ -33,6 +33,6 @@ checkDupUsernameOrEmail = (req, res, next) => {
   next();
 }
 
-const verifySignUp = checkDupUsernameOrEmail;
+// const verifySignUp = checkDupUsernameOrEmail;
 
-module.exports = verifySignUp;
+module.exports = checkDupUsernameOrEmail;

@@ -1,6 +1,6 @@
-const db = require('../model');
+const User = require('../model/user.model');
 const config = require('../config/auth.config');
-const User = db.user;
+// const User = db.user;
 
 // const Op = db.Sequelize.Op;
 
@@ -21,7 +21,6 @@ const signUp = (req, res) =>{
       message: err.message
     })
   })
-
 };
 
 const signIn = (req, res) =>{
