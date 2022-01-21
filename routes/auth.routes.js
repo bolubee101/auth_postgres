@@ -1,17 +1,11 @@
-
 // const verifySignUp = require('../middleware');
+const express = require('express');
 const controller = require('../controllers/auth.controller');
 const  checkDupUsernameOrEmail  = require('../middleware/verifySignUp');
+let authRouter = express.Router()
 
-module.exports = ((app) => {
-  app.use((req, res, next) => {
-    res.header (
-      'Access-control-Allow-headers', 'x-access-token, Origin, Content-Type, Accept'
-    );
-    next();
-  });
+authRouter.post('/signup',checkDupUsernameOrEmail, controller.signUp);
 
-  app.post('/api/auth/signup',checkDupUsernameOrEmail, controller.signUp);
+authRouter.post('/signin', controller.signIn)
 
-  app.post('api/auth/signin', controller.signIn)
-})
+module.exports = authRouter
