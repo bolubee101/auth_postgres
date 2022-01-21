@@ -3,7 +3,7 @@
 const User  = require('../model/user.model');
 // const User = db.User
 
-checkDupUsernameOrEmail = (req, res, next) => {
+const checkDupUsernameOrEmail = (req, res, next) => {
   // username
   User.findOne({
     where: {
